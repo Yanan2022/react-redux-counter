@@ -1,9 +1,18 @@
+import { useSelector } from 'react-redux';
 import './App.css';
+import 'bootstrap/dist/css/bootstrap.css';
+import CreatePost from './components/CreatePost';
+import PostList from './components/PostList';
 
 function App() {
+
+  const posts = useSelector(state => state.posts);
+
+
   return (
     <div className="App">
-      <h1>Bienvenu au cours de REACT REDUX</h1>
+      <CreatePost/>
+      <PostList  posts={posts} />
     </div>
   );
 }
